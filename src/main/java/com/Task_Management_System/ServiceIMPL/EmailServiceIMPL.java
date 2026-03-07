@@ -33,7 +33,7 @@ public class EmailServiceIMPL implements EmailService {
 		
 		// Find user by email
 		User user = user_Repository.findByEmail(emailReqestDTO.getTo())
-				.orElseThrow(() -> new RuntimeException("User not found"));
+				.orElseThrow(() -> new RuntimeException("User not found with this Email"));
 
 		// Save OTP in user
 		user.setEmailOTP(otp);
