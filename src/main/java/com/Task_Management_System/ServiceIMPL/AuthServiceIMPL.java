@@ -18,7 +18,7 @@ public class AuthServiceIMPL implements AuthService {
 	
 	@Override
 	public LoginResponse userLogin(AuthDTO authDTO) {
-		
+		 	//Find User by email and store all user data into the Object 
 			User user=user_Repository.findByEmail(authDTO.getEmail()).orElseThrow(() -> new ResourceNotFoundException("Email not found"));
 
 			if (!user.getPassword().equals(authDTO.getPassword())) {
